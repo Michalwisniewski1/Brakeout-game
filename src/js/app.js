@@ -63,13 +63,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
         initialValueY += moveY;
 
 
-        if (initialValueY + moveY + radiusOfBall > getCanvasContainer.height) {
-            moveY = -moveY;
-            console.log('game over');
-        }
 
         if (initialValueY + moveY < radiusOfBall) {
             moveY = -moveY;
+        } else if (initialValueY + moveY > getCanvasContainer.height - radiusOfBall) {
+            if (initialValueX > paletteWidth && initialValueX < paletteWidth + paletteValueX) {
+                moveY = -moveY;
+            } else {
+                console.log('game over');
+                console.log(paletteWidth);
+                console.log(moveX);
+            }
         }
 
         if (initialValueX + moveX + radiusOfBall > getCanvasContainer.width || initialValueX + moveX < radiusOfBall) {
@@ -84,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (keyPressLeft && paletteValueX + getCanvasContainer.width > getCanvasContainer.width) {
             paletteValueX -= 7;
         }
+
     }
 
 
