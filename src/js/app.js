@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var ceilBricks = [];
     var score = 0;
 
+
     //loop creating bricks
 
     for (var i = 0; i < 9; i++) { //X line
