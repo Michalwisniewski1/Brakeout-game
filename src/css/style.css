@@ -5,7 +5,7 @@
 }
 
 canvas {
-    background: #eee;
+    background-image: url('../images/desert.png');
     display: block;
     margin: 0 auto;
 }
